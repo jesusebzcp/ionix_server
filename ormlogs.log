@@ -1,0 +1,699 @@
+[2022-11-06T21:33:10.061Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:33:10.175Z][QUERY]: START TRANSACTION
+[2022-11-06T21:33:10.257Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T21:33:10.337Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T21:33:10.429Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T21:33:10.430Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T21:33:10.430Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T21:33:10.431Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T21:33:10.431Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T21:33:10.850Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:33:10.933Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T21:33:11.020Z][QUERY]: COMMIT
+[2022-11-06T21:34:01.281Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:34:01.381Z][QUERY]: START TRANSACTION
+[2022-11-06T21:34:01.464Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T21:34:01.553Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T21:34:01.642Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T21:34:01.642Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T21:34:01.642Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T21:34:01.642Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T21:34:01.642Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T21:34:02.083Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:34:02.171Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T21:34:02.260Z][QUERY]: COMMIT
+[2022-11-06T21:37:34.672Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:37:34.766Z][QUERY]: START TRANSACTION
+[2022-11-06T21:37:34.848Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T21:37:34.928Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T21:37:36.076Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:37:36.163Z][QUERY]: START TRANSACTION
+[2022-11-06T21:37:37.411Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:37:37.515Z][QUERY]: START TRANSACTION
+[2022-11-06T21:37:37.598Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T21:37:37.695Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T21:37:37.782Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T21:37:37.783Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T21:37:37.784Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T21:37:37.784Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T21:37:37.784Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T21:37:38.214Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:37:38.299Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T21:37:38.390Z][QUERY]: COMMIT
+[2022-11-06T21:38:12.470Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:38:12.572Z][QUERY]: START TRANSACTION
+[2022-11-06T21:38:12.653Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T21:38:12.741Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T21:38:12.822Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T21:38:12.822Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T21:38:12.822Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T21:38:12.822Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T21:38:12.822Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T21:38:13.248Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:38:13.333Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T21:38:13.420Z][QUERY]: COMMIT
+[2022-11-06T21:41:40.345Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:41:40.470Z][QUERY]: START TRANSACTION
+[2022-11-06T21:41:40.556Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T21:41:40.640Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T21:41:40.727Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T21:41:40.729Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T21:41:40.730Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T21:41:40.730Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T21:41:40.731Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T21:41:41.152Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T21:41:41.239Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T21:41:41.333Z][QUERY]: COMMIT
+[2022-11-06T22:05:59.997Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T22:06:00.130Z][QUERY]: START TRANSACTION
+[2022-11-06T22:06:00.211Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T22:06:00.293Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T22:06:00.385Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T22:06:00.394Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T22:06:00.395Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T22:06:00.396Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T22:06:00.396Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T22:06:00.818Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T22:06:00.904Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T22:06:00.991Z][QUERY]: COMMIT
+[2022-11-06T22:06:04.285Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T22:06:04.409Z][QUERY]: START TRANSACTION
+[2022-11-06T22:06:04.492Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-06T22:06:04.575Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'user'
+[2022-11-06T22:06:04.661Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-06T22:06:04.662Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-06T22:06:04.662Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-06T22:06:04.663Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-06T22:06:04.663Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'ionixdb'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'ionixdb'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-06T22:06:05.097Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-06T22:06:05.184Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'ionixdb' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-06T22:06:05.274Z][QUERY]: COMMIT

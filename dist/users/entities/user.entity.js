@@ -61,7 +61,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', nullable: false }),
+    (0, typeorm_1.Column)({ type: 'varchar', nullable: false, length: 500 }),
     __metadata("design:type", String)
 ], User.prototype, "imageUrl", void 0);
 __decorate([

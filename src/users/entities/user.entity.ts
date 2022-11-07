@@ -18,7 +18,7 @@ export class User {
   username: string;
   @Column({ type: 'varchar', nullable: false })
   password: string;
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: false, length: 500 })
   imageUrl: string;
 
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })

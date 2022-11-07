@@ -17,6 +17,7 @@ export class CreateUserDto {
   @ApiProperty()
   @Length(6)
   password: string;
+  @ApiProperty()
   @IsString()
   imageUrl: string;
 }

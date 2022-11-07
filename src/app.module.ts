@@ -27,6 +27,9 @@ import { S3 } from 'aws-sdk';
           autoLoadEntities: true,
           logging: true,
           logger: 'file',
+          ssl: {
+            rejectUnauthorized: false,
+          },
         };
       },
       inject: [ConfigService],

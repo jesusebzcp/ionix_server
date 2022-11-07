@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 
 import { CreateUserDto } from '../dto/create-user.dto';
 import { PaginationDto } from '../dto/pagination.dot';
+import { UpdateUserDto } from '../dto/update-user.dto';
 import { User } from '../entities/user.entity';
 
 @Injectable()
@@ -71,7 +72,7 @@ export class UsersService {
     return await this.userRepo.save(newUser);
   }
 
-  async update(id: number, body: CreateUserDto) {
+  async update(id: number, body: UpdateUserDto) {
     const user = await this.userRepo.findOne({
       where: {
         id,

@@ -48,12 +48,12 @@ __decorate([
 ], User.prototype, "lastname", void 0);
 __decorate([
     (0, nestjs_seeder_1.Factory)((faker) => faker.lorem.words(2)),
-    (0, typeorm_1.Column)({ length: 20, unique: true, nullable: false }),
+    (0, typeorm_1.Column)({ unique: true, nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
     (0, nestjs_seeder_1.Factory)((faker) => faker.lorem.words(2)),
-    (0, typeorm_1.Column)({ length: 20, unique: true, nullable: false }),
+    (0, typeorm_1.Column)({ unique: true, nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "username", void 0);
 __decorate([

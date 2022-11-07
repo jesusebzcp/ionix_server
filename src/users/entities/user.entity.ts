@@ -11,10 +11,10 @@ export class User {
   @Column({ length: 20 })
   lastname: string;
   @Factory((faker) => faker.lorem.words(2))
-  @Column({ length: 20, unique: true, nullable: false })
+  @Column({ unique: true, nullable: false })
   email: string;
   @Factory((faker) => faker.lorem.words(2))
-  @Column({ length: 20, unique: true, nullable: false })
+  @Column({ unique: true, nullable: false })
   username: string;
   @Column({ type: 'varchar', nullable: false })
   password: string;

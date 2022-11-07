@@ -2812,3 +2812,2279 @@
 [2022-11-07T02:15:25.203Z][QUERY]: INSERT INTO `user`(`id`, `firstname`, `lastname`, `email`, `username`, `password`, `imageUrl`, `createAt`) VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT) -- PARAMETERS: ["jesus","briceno","j1@j.com","jesusebzcp1","$2a$06$q9/wVvRnRjfpdLL5gmszHOuIg9zRkIGRHgPEnno7CLm1Rme3b.rmC","https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/285820714_5906285066061132_5200477889675619429_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHgWoyGF3Jz8jfdSopIE5BeL4PD1MC7PJ8vg8PUwLs8n3VsT-LrNI5NVSJlBvFVLDqBw1xUrfSPUtYDLLH0m_3_&_nc_ohc=eN212nN8_HsAX_xwtEJ&tn=2vg_OIdYhfriSOi2&_nc_ht=scontent.fbog2-4.fna&oh=00_AfBNYEHZr6pVtQejfY5TiIQb4oeHpevaJF-asR-2XRqUCw&oe=636D2EB3"]
 [2022-11-07T02:15:25.374Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE `User`.`id` = ? -- PARAMETERS: [1001]
 [2022-11-07T02:15:25.540Z][QUERY]: COMMIT
+[2022-11-07T02:40:43.937Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:40:44.111Z][QUERY]: START TRANSACTION
+[2022-11-07T02:40:44.273Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:40:44.438Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:40:44.607Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:40:44.609Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:40:44.609Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:40:44.609Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:40:44.610Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:40:45.576Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:40:45.742Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:40:45.915Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:40:46.085Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:40:46.085Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:40:46.087Z][QUERY]: ROLLBACK
+[2022-11-07T02:40:49.834Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:40:50.007Z][QUERY]: START TRANSACTION
+[2022-11-07T02:40:50.170Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:40:50.339Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:40:50.508Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:40:50.511Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:40:50.511Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:40:50.511Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:40:50.511Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:40:51.483Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:40:51.650Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:40:51.826Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:40:51.996Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:40:51.996Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:40:51.996Z][QUERY]: ROLLBACK
+[2022-11-07T02:40:55.676Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:40:55.861Z][QUERY]: START TRANSACTION
+[2022-11-07T02:40:56.023Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:40:56.188Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:40:56.355Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:40:56.357Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:40:56.357Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:40:56.357Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:40:56.357Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:40:57.338Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:40:57.505Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:40:57.676Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:40:57.846Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:40:57.846Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:40:57.847Z][QUERY]: ROLLBACK
+[2022-11-07T02:41:01.511Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:01.683Z][QUERY]: START TRANSACTION
+[2022-11-07T02:41:01.856Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:41:02.020Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:41:02.201Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:41:02.201Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:41:02.201Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:41:02.201Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:41:02.201Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:41:03.222Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:03.383Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:41:03.548Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:03.716Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:03.716Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:41:03.718Z][QUERY]: ROLLBACK
+[2022-11-07T02:41:07.403Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:07.580Z][QUERY]: START TRANSACTION
+[2022-11-07T02:41:07.748Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:41:07.924Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:41:08.101Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:41:08.102Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:41:08.103Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:41:08.103Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:41:08.103Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:41:09.107Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:09.275Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:41:09.450Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:09.622Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:09.622Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:41:09.623Z][QUERY]: ROLLBACK
+[2022-11-07T02:41:13.292Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:13.461Z][QUERY]: START TRANSACTION
+[2022-11-07T02:41:13.623Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:41:13.789Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:41:13.969Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:41:13.971Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:41:13.971Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:41:13.972Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:41:13.973Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:41:14.955Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:15.117Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:41:15.291Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:15.454Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:15.454Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:41:15.454Z][QUERY]: ROLLBACK
+[2022-11-07T02:41:19.245Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:19.433Z][QUERY]: START TRANSACTION
+[2022-11-07T02:41:19.601Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:41:19.781Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:41:19.974Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:41:19.974Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:41:19.975Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:41:19.975Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:41:19.975Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:41:20.960Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:21.123Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:41:21.291Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:21.459Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:21.459Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:41:21.466Z][QUERY]: ROLLBACK
+[2022-11-07T02:41:25.128Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:25.302Z][QUERY]: START TRANSACTION
+[2022-11-07T02:41:25.466Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:41:25.632Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:41:25.798Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:41:25.799Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:41:25.799Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:41:25.799Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:41:25.799Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:41:26.790Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:26.955Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:41:27.125Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:27.295Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:27.295Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:41:27.297Z][QUERY]: ROLLBACK
+[2022-11-07T02:41:30.965Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:31.143Z][QUERY]: START TRANSACTION
+[2022-11-07T02:41:31.302Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:41:31.465Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:41:31.632Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:41:31.634Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:41:31.635Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:41:31.635Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:41:31.635Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:41:32.620Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:41:32.783Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:41:32.953Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:33.126Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:41:33.126Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:41:33.127Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:15.669Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:15.843Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:16.004Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:16.185Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:16.352Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:16.352Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:16.353Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:16.353Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:16.353Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:17.324Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:17.492Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:17.661Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:17.834Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:17.834Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:17.835Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:21.558Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:21.742Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:21.906Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:22.071Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:22.239Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:22.239Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:22.240Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:22.240Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:22.240Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:23.299Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:23.467Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:23.641Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:23.811Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:23.811Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:23.811Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:27.509Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:27.691Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:27.858Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:28.031Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:28.204Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:28.205Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:28.205Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:28.206Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:28.206Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:29.207Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:29.379Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:29.554Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:29.729Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:29.729Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:29.731Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:33.405Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:33.583Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:33.743Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:33.911Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:34.078Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:34.080Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:34.083Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:34.083Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:34.083Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:35.057Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:35.222Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:35.386Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:35.556Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:35.556Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:35.558Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:39.238Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:39.425Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:39.587Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:39.752Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:39.922Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:39.923Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:39.924Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:39.924Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:39.924Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:40.959Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:41.131Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:41.306Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:41.495Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:41.495Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:41.496Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:45.191Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:45.365Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:45.528Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:45.691Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:45.861Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:45.863Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:45.863Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:45.863Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:45.863Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:46.850Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:47.014Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:47.183Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:47.357Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:47.357Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:47.359Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:51.024Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:51.208Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:51.369Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:51.531Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:51.691Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:51.699Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:51.700Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:51.700Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:51.701Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:52.666Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:52.830Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:52.996Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:53.165Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:53.165Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:53.166Z][QUERY]: ROLLBACK
+[2022-11-07T02:44:56.842Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:57.024Z][QUERY]: START TRANSACTION
+[2022-11-07T02:44:57.187Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:44:57.350Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:44:57.514Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:44:57.515Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:44:57.515Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:44:57.516Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:44:57.516Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:44:58.510Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:44:58.675Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:44:58.847Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:59.016Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:44:59.016Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:44:59.018Z][QUERY]: ROLLBACK
+[2022-11-07T02:45:02.702Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:45:02.881Z][QUERY]: START TRANSACTION
+[2022-11-07T02:45:03.049Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:45:03.217Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:45:03.387Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T02:45:03.388Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T02:45:03.388Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T02:45:03.388Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T02:45:03.389Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T02:45:04.444Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:45:04.615Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:45:04.788Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:45:04.965Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T02:45:04.965Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T02:45:04.967Z][QUERY]: ROLLBACK
+[2022-11-07T02:46:33.174Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T02:46:33.368Z][QUERY]: START TRANSACTION
+[2022-11-07T02:46:33.534Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T02:46:33.699Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T02:46:33.867Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T02:46:34.043Z][QUERY]: CREATE TABLE `user` (`id` int NOT NULL AUTO_INCREMENT, `firstname` varchar(20) NOT NULL, `lastname` varchar(20) NOT NULL, `email` varchar(20) NOT NULL, `username` varchar(20) NOT NULL, `password` varchar(255) NOT NULL, `imageUrl` varchar(500) NOT NULL, `createAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`), UNIQUE INDEX `IDX_78a916df40e02a9deb1c4b75ed` (`username`), PRIMARY KEY (`id`)) ENGINE=InnoDB
+[2022-11-07T02:46:34.246Z][QUERY]: COMMIT
+[2022-11-07T02:47:10.276Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`email` = ?) LIMIT 1 -- PARAMETERS: ["j@j.com"]
+[2022-11-07T02:47:10.449Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`username` = ?) LIMIT 1 -- PARAMETERS: ["jesus"]
+[2022-11-07T02:47:10.623Z][QUERY]: START TRANSACTION
+[2022-11-07T02:47:10.835Z][QUERY]: INSERT INTO `user`(`id`, `firstname`, `lastname`, `email`, `username`, `password`, `imageUrl`, `createAt`) VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT) -- PARAMETERS: ["jesus","briceno","j@j.com","jesus","$2a$06$AUsDIhVAI.dZYNPPfc3qE.a9urE8ly.cbQZMGUN.998czO/JhtwRO",""]
+[2022-11-07T02:47:11.007Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE `User`.`id` = ? -- PARAMETERS: [1]
+[2022-11-07T02:47:11.177Z][QUERY]: COMMIT
+[2022-11-07T02:47:32.373Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`email` = ?) LIMIT 1 -- PARAMETERS: ["j1@j.com"]
+[2022-11-07T02:47:32.543Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`username` = ?) LIMIT 1 -- PARAMETERS: ["jesus"]
+[2022-11-07T02:47:43.367Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`email` = ?) LIMIT 1 -- PARAMETERS: ["j1@j.com"]
+[2022-11-07T02:47:43.536Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`username` = ?) LIMIT 1 -- PARAMETERS: ["jesus1"]
+[2022-11-07T02:47:43.703Z][QUERY]: START TRANSACTION
+[2022-11-07T02:47:43.885Z][QUERY]: INSERT INTO `user`(`id`, `firstname`, `lastname`, `email`, `username`, `password`, `imageUrl`, `createAt`) VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT) -- PARAMETERS: ["jesus","briceno","j1@j.com","jesus1","$2a$06$5avPUUK1en0liPpl9isqMeNeRigFU8UAATyr6AftDQALk81y.ICQ2",""]
+[2022-11-07T02:47:44.049Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE `User`.`id` = ? -- PARAMETERS: [2]
+[2022-11-07T02:47:44.215Z][QUERY]: COMMIT
+[2022-11-07T03:08:36.679Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`email` = ?) LIMIT 1 -- PARAMETERS: ["j1@j.com"]
+[2022-11-07T03:08:36.887Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:37.284Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:37.462Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 1
+[2022-11-07T03:08:37.649Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:37.811Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 1
+[2022-11-07T03:08:42.959Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:43.127Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:43.636Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:43.809Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 1
+[2022-11-07T03:08:43.970Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:44.137Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 1
+[2022-11-07T03:08:45.932Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:46.101Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 11
+[2022-11-07T03:08:46.978Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:47.147Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 1
+[2022-11-07T03:08:47.893Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:48.060Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` ASC LIMIT 10 OFFSET 1
+[2022-11-07T03:08:48.993Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`password` AS `User_password`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` WHERE (`User`.`id` = ?) LIMIT 1 -- PARAMETERS: [2]
+[2022-11-07T03:08:49.156Z][QUERY]: SELECT `User`.`id` AS `User_id`, `User`.`firstname` AS `User_firstname`, `User`.`lastname` AS `User_lastname`, `User`.`email` AS `User_email`, `User`.`username` AS `User_username`, `User`.`imageUrl` AS `User_imageUrl`, `User`.`createAt` AS `User_createAt` FROM `user` `User` ORDER BY `User`.`createAt` DESC LIMIT 10 OFFSET 1
+[2022-11-07T03:12:19.861Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T03:12:20.034Z][QUERY]: START TRANSACTION
+[2022-11-07T03:12:20.191Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T03:12:20.353Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T03:12:20.515Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T03:12:20.515Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T03:12:20.516Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T03:12:20.516Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T03:12:20.516Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T03:12:22.076Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T03:12:22.247Z][QUERY]: START TRANSACTION
+[2022-11-07T03:12:22.406Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T03:12:22.567Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T03:12:22.730Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T03:12:22.731Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T03:12:22.731Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T03:12:22.731Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T03:12:22.731Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T03:12:23.712Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T03:12:23.876Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T03:12:24.054Z][QUERY]: DROP INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` ON `user`
+[2022-11-07T03:12:24.229Z][QUERY]: ALTER TABLE `user` DROP COLUMN `email`
+[2022-11-07T03:12:24.469Z][QUERY]: ALTER TABLE `user` ADD `email` varchar(255) NOT NULL
+[2022-11-07T03:12:24.648Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T03:12:24.826Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T03:12:24.826Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T03:12:24.827Z][QUERY]: ROLLBACK
+[2022-11-07T03:12:26.555Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T03:12:26.733Z][QUERY]: START TRANSACTION
+[2022-11-07T03:12:26.893Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T03:12:27.053Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T03:12:27.220Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T03:12:27.221Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T03:12:27.221Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T03:12:27.221Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T03:12:27.221Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T03:12:28.197Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T03:12:28.360Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T03:12:28.528Z][QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T03:12:28.699Z][FAILED QUERY]: ALTER TABLE `user` ADD UNIQUE INDEX `IDX_e12875dfb3b1d92d7d7c5377e2` (`email`)
+[2022-11-07T03:12:28.699Z][QUERY ERROR]: Error: Duplicate entry '' for key 'user.IDX_e12875dfb3b1d92d7d7c5377e2'
+[2022-11-07T03:12:28.700Z][QUERY]: ROLLBACK
+[2022-11-07T03:12:32.395Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T03:12:32.563Z][QUERY]: START TRANSACTION
+[2022-11-07T03:12:32.720Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T03:12:32.882Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz' AND `TABLE_NAME` = 'user'
+[2022-11-07T03:12:33.046Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+                
+[2022-11-07T03:12:33.047Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T03:12:33.047Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T03:12:33.047Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T03:12:33.047Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'user'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'b4fcvgzj96mkwvqn1xxz'
+                    AND
+                    `TABLE_NAME` = 'user'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
